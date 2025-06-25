@@ -15,6 +15,9 @@ app.use('/api/v1', authRouter)
 //     res.send("passed authentication")
 // })
 app.use('/api/v1/blog', auth, blogRouter)
+app.get('/', (req, res) => {
+    res.status(200).json({success: true, message: "server is live"})
+})
 app.use(notfound)
 const start = async () => {
     try {
